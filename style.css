@@ -107,25 +107,40 @@ body {
 }
 
 .weathercontainer{
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  
+  justify-content:center;
   
 }
 #temp{
-  width: 200px;
-  height: 150px;
+   
+  margin-bottom: 40px;
   display: block;
   border-radius: 30px;
   text-align: center;
   align-items: center;
+  font-size: 30px;
+}
+@media (max-width: 768px) {
+  #temp {
+      font-size: 24px;
+  }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 480px) {
+  #temp {
+      font-size: 18px;
+  }
 }
 #humidity,#wind,#pressure,#condition{
   height: 200px;
-  padding: 8px;
-  width: 120px;
-  font-size: 30px;
+  padding: 4px;
+  width: 100%;
+  font-size: 26px;
   border-radius: 15px;
-  margin: 8px;
+  margin: 4px;
   display: flex;
   flex-direction: column;
   font-weight: bold;
@@ -134,7 +149,6 @@ body {
 }
 @media screen and (max-width: 600px) {
   #humidity, #wind, #pressure, #condition {
-    width: 80px; 
     font-size: 20px; 
     height: 150px; 
     margin: 5px; 
@@ -142,7 +156,6 @@ body {
 }
 @media screen and (max-width: 500px) {
   #humidity, #wind, #pressure, #condition {
-    width: 60px; 
     font-size: 16px; 
     height: 130px; 
     margin: 4px; 
@@ -151,9 +164,12 @@ body {
 
 @media screen and (max-width: 400px) {
   #humidity, #wind, #pressure, #condition {
-    width: 45px; 
     font-size: 12px; 
     height: 100px;
     margin: 2px; 
   }
+}
+
+.footer{
+  margin-top: 40px;
 }

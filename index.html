@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather-On-Js</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather-On-Js</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1 class="heading">weather update</h1>
-    <div class="card">
+  <h1 class="heading">weather update</h1>
+  <div class="card">
     <div class="search">
-        <input type="text" name="search" id="searchinput" placeholder="enter city">
-        <button><img src="weatherImages/R.png" alt="search"></button>
+      <input type="text" name="search" id="searchinput" placeholder="enter city">
+      <button><img src="weatherImages/R.png" alt="search"></button>
     </div>
     <div class="weather">
-       <div id="temp">
+      <div id="temp">
         <h2 class="location"></h2>
-       </div>
-      <div class="weathercontainer">
-        <div id="humidity"><p>Humidity</p></div>
-        <div id="pressure"><p>Pressure</p></div>
-        <div id="wind"><p>Wind</p></div>
-        <div id="condition"><p>Weather</p></div>
       </div>
-
+      <div class="weathercontainer">
+        <div id="humidity"></div>
+        <div id="pressure"></div>
+        <div id="wind"></div>
+        <div id="condition"></div>
+      </div>
+     <div class="footer">
+      <p>Powred by: <h3>Beef&Chicken LTD.</h3></p>
+     </div>
     </div>
-    </div>
+  </div>
 
-    
+
 </body>
 <script src="main.js"></script>
+
 </html>

@@ -8,43 +8,27 @@ async function weatherupdate(location) {
     const response = await fetch(apiurl + location + `&appid=${apikey}`);
     var data = await response.json();
     console.log(data);
-
-    // Clear previous content before appending new data
+    if(data.cod=='404')
+    {
+        window.alert('City not found');
+    }
+   
     const tempDiv = document.getElementById('temp');
-    tempDiv.innerHTML = ''; // Clear the previous temperature
-    const newParagraph = document.createElement('h2');
-    newParagraph.textContent = Math.round(data.main.temp) + `° C`;
-    tempDiv.appendChild(newParagraph);
-    
-    document.querySelector(".location").innerHTML = data.name;
+    tempDiv.innerHTML = `<h1>${Math.round(data.main.temp) + `° C`}</h1>`
+    tempDiv.innerHTML+=`<h1>${data.name}</h1>`
 
-    // Clear and update humidity
     const humidityDiv = document.getElementById("humidity");
-    humidityDiv.innerHTML = '<p>Humidity</p>'; // Reset title and clear previous data
-    const humidity = document.createElement('h2');
-    humidity.textContent = data.main.humidity + '%';
-    humidityDiv.appendChild(humidity);
+    humidityDiv.innerHTML = `<p>Humidity</p> <h2>${data.main.humidity + '%'}</h2>`; 
 
-    // Clear and update pressure
     const pressureDiv = document.getElementById("pressure");
-    pressureDiv.innerHTML = ''; // Clear previous pressure
-    const pressure = document.createElement('h3');
-    pressure.textContent = data.main.pressure + ' Pa';
-    pressureDiv.appendChild(pressure);
+    pressureDiv.innerHTML =`<p>Pressure</p> <h3>${data.main.pressure + 'hPa'}</h3>`;
 
-    // Clear and update wind speed
     const windDiv = document.getElementById("wind");
-    windDiv.innerHTML = ''; // Clear previous wind speed
-    const wind = document.createElement('h3');
-    wind.textContent = data.wind.speed + ' Km/h';
-    windDiv.appendChild(wind);
+    windDiv.innerHTML = `<p>Wind</p> <h3>${data.wind.speed + 'Km/h'}</h3>`;
 
-    // Clear and update weather condition
+
     const conditionDiv = document.getElementById("condition");
-    conditionDiv.innerHTML = '';
-    const condition = document.createElement('h3');
-    condition.textContent = data.weather[0].main;
-    conditionDiv.appendChild(condition);
+    conditionDiv.innerHTML =`<p>Weather</p> <h2>${data.weather[0].main}</h2>`;
 }
 
 // Initial weather update for Dhaka
